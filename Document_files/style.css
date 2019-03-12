@@ -1,0 +1,115 @@
+body{
+/* border: rgba(194, 110, 14, 0.808) solid 20px;
+width: 1500px;
+height:700px ; */
+
+}
+
+
+
+ h1{
+font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+font-size: 500%;
+margin-left:600px ;
+margin-top: 30px;
+color: chocolate;
+font-size: 300%;
+}
+
+container{
+    position:relative;
+
+}
+
+#turtle{
+    position: absolute;
+left:25%;
+top:12%;
+width:10%;
+}
+
+#lion{
+    position: absolute;
+  left:45% ;
+  bottom:70%;
+}
+#monkey{
+    position: absolute;
+    left:65%;
+ top:10%;
+
+   
+}
+
+#cat{
+    position: absolute;
+ left:58%;
+ top:15%;
+ width:8%;
+    
+}
+
+#sheep{
+top:20%;
+    left: 33%;
+    position: absolute;
+}
+
+
+
+.img1{
+    height:22%;
+    position: absolute;
+    left:49%;
+    top:20%;
+
+} 
+
+table{
+    display: flex;} 
+
+ tr ,td {
+    width: 90px;
+    height: 90px;
+    border: 10px solid  rgba(194, 110, 14, 0.808) ;
+    position: relative;
+ 
+    font-size: 160%;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(235, 193, 116);
+   left:250%;
+   bottom:-200px;
+}
+
+#first{
+width:40%;
+position: absolute;
+right:60%;
+top:40%;
+}
+
+
+#playbutton{
+    padding: 20px;
+    margin: 30px;
+    border-radius: 12px;
+    font-size: 24px;
+    color:white;
+    cursor: pointer;
+    text-align: center;
+    background-color: orange;
+    position: absolute;
+    left:850px;
+    bottom:20px;
+    width: 20%;
+    high:20%;
+        }
+    
+    #playbutton:hover {background-color:#704c08;}
+    
+    #playbutton:active {
+      background-color: #8d6418;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
