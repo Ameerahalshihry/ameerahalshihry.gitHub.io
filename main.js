@@ -1,155 +1,95 @@
 var win_combo = [
-    ["1","2","3"],["4","5","6"],["7","8","9"],
-    ["1","4","7"],["2","5","8"],["3","6","9"],
-    ["3","5","7"],["1","5","9"]];
+  ["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"],
+  ["1", "4", "7"], ["2", "5", "8"], ["3", "6", "9"],
+  ["3", "5", "7"], ["1", "5", "9"]];
 
 var flag = true;
 var counter = 0;
 var player1 = [];
 var player2 = [];
 
-
-
+// This function will add X or O when user click the table cell
 function insert() {
+// declare boolean variable to switch between X and O
+  if (flag) {
+    $(this).text("X");
+    //$(this).addClass("X");
+    $(this).css("background-color", "saddlebrown")
+    flag = !flag;
+    player1.push(event.target.id)
+    checkWinner();
 
-    if (flag) {
-        $(this).text("X");
-        $(this).addClass("X")
-        flag = !flag;
-        player1.push(event.target.id)
-        // counter++;
-             checkWinner(); 
-
-    } else {
-        $(this).text("O");
-        $(this).addClass("O")
-        flag = !flag;
-        player2.push(event.target.id)
-        //counter++;
-       checkWinner();
-    }
+  } else {
+    $(this).text("O");
+    //$(this).addClass("O")
+    $(this).css("background-color", "orange")
+    flag = !flag;
+    player2.push(event.target.id)
+    checkWinner();
+  }
 
 }
 $("td").one("click", insert)
 
 
 
-function checkWinner() 
-{
-    var notequal= true;
-for (var j=0;j < win_combo.length;j++)
-     {  
-            if (player1.includes(win_combo[j][0]) && player1.includes(win_combo[j][1]) &&
-             player1.includes(win_combo[j][2]) && notequal)
-            {
-                console.log("Winner");
-              swal("Congrats!", "X is win!")
-              $("td").off("click", insert)
-              notequal=false;
-               //resetGame();
-            }
-            else if (player2.includes(win_combo[j][0]) && player2.includes(win_combo[j][1]) &&
-             player2.includes(win_combo[j][2]) && notequal)
-            {
-                console.log("Winner");
-              swal("Congrats!", "O is win!")
-              $("td").off("click", insert)
-              notequal=false;
-              //resetGame();
-            } 
-            else if (player1.length==5 || player2.length==5 )
-            {
-                if (notequal)
-                {
-                    swal("no winner");
-                }
-            }
-             
-
-            }
-        }
-        
-        function allowDrop(ev) {
-            ev.preventDefault();
-          }
-          
-          function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-          }
-          
-          function drop(ev) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-          }       
-            
-
-        
-    
-    
-            
-    
+function checkWinner() {
+  var notequal = true;
+  for (var j = 0; j < win_combo.length; j++) {
+    if (player1.includes(win_combo[j][0]) && player1.includes(win_combo[j][1]) &&
+      player1.includes(win_combo[j][2]) && notequal) {
+      swal({
+        title: "Congrats!",
+        text: "Player X is win!",
+        icon: "tarazan.gif",
+        button: "Aww yiss!",
+      });
+      $("td").off("click", insert)
+      notequal = false;
+    }
+    else if (player2.includes(win_combo[j][0]) && player2.includes(win_combo[j][1]) &&
+      player2.includes(win_combo[j][2]) && notequal) {
+     
+      swal({
+        title: "Congrats!",
+        text: "Player O is win!",
+        icon: "tarazan.gif",
+        button: "Aww yiss!",
+      });
+      $("td").off("click", insert)
+      notequal = false;
+    }
+    else if (player1.length == 5 || player2.length == 5) {
+      if (notequal) {
+        swal({
+          title: "Sorry!",
+          text: "No winner! try new game!",
+          icon: "nowinner.gif",
+          button: "OK",
+        });
+      }
+    }
 
 
-
-
-// function checkWinnerO(player2) 
-// {
-// for (var j=0;j < win_combo.length;j++)
-//      {  
-//             if (player2.includes(win_combo[j][0]) && player2.includes(win_combo[j][1]) &&
-//              player2.includes(win_combo[j][2]))
-//             {
-//                 console.log("Winner");
-//               swal("Congrats!", "O is win!")
-//               $("td").off("click", insert)
-//               //resetGame();
-//             } 
-//     }
-
-// }
-
-
-function resetGame()
-{
-
-location.reload();
-
-    //button.addEventListener("click", function () {
-        //var tds = document.getElementsByTagName('td');
-//         var tds= $('td');
-//         for(var i = 0; i < tds.length; i++) 
-//         {
-//             tds[i].innerHTML = '';
-//         }
   }
+}
+function resetGame() {
+  location.reload();
+}
 
+function allowDrop(ev) {
+  ev.preventDefault();
 
-// function checkWinnerX(marksArray)
+}
 
-// {
-//     var player1_sorted = player1.sort().join();
-// //console.log(sortedX) ;
-    
-//     for (let X of win_combo) {
-//     var winSorted = X.sort().join();
-//          if (player1_sorted === winSorted) 
-//          {
-//              console.log("win");
-//          }else
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
 
-
-//          {
-
-
-//          }
-//      }
-//    }
-
-
-// //    checkWinnerO(player2)
-// //    {
-
-// // console.log("YYYYYYY")
-
-// //    }
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  
+  document.getElementById(data).classList.add("fixed")
+  ev.target.appendChild(document.getElementById(data));
+}
