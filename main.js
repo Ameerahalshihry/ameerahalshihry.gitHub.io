@@ -7,14 +7,18 @@ var flag = true;
 var counter = 0;
 var player1 = [];
 var player2 = [];
+var scorePlayer1=0;
+var scorePlayer2=0;
+var gameOver = false;
 
 //call function insert when the user click on table cell 
-$("td").one("click", insert)
+$("td").on("click", insert)
 
 
 // This function will add X or O when user click the table cell
 function insert() {
 // declare boolean variable to switch between X and O
+if ($(this).text() == "" && gameOver == false){
   if (flag) {
     $(this).text("X");
     $(this).css("background-color", "saddlebrown")
@@ -35,6 +39,7 @@ function insert() {
   }
 
 }
+}
 
 //this function checkWinner will check who's win
 function checkWinner() {
@@ -46,12 +51,15 @@ function checkWinner() {
       {
       swal({// sweet alert shows the player1 is winner
         title: "Congrats!",
-        text: "Player X is win!",
+        text: "Player X is winner!",
         icon: "tarazan.gif",
         button: "Aww yiss!",
       });
-      $("td").off("click", insert)// the user can not do click on the cell after win
+      gameOver = true
+      // $("td").off("click", insert)// the user can not do click on the cell after win
       notequal = false;
+      scorePlayer1++;
+      score();
      
     }
     else if (player2.includes(win_combo[j][0]) && player2.includes(win_combo[j][1]) &&
@@ -59,20 +67,23 @@ function checkWinner() {
       {
       swal({// sweet alert shows the player2 is winner
         title: "Congrats!",
-        text: "Player O is win!",
+        text: "Player O is winner!",
         icon: "tarazan.gif",
         button: "Aww yiss!",
       });
-      $("td").off("click", insert)// the user can not do click on the cell after win
+      gameOver = true
+
+      // $("td").off("click", insert)// the user can not do click on the cell after win
       notequal = false;
-      
+      scorePlayer2++;
+      score();
     }
     else if (player1.length == 5 || player2.length == 5)//check if the player1 or player2 clicked all cells and no winner 
      {
       if (notequal) {
         swal({// sweet alert shows no winner
           title: "Sorry!",
-          text: "No winner! try new game!",
+          text: "No winner! play again!",
           icon: "nowinner.gif",
           button: "OK",
         });
@@ -84,7 +95,19 @@ function checkWinner() {
 }
 //This function to reset the game
 function resetGame() {
-  location.reload();
+ // location.reload();
+$('td').empty();
+player1 = [];
+player2 = [];
+$('td').css("background-color","white");
+flag = true;
+gameOver = false;
+// $("td").one("click", insert);
+}
+function score() //display score
+{
+$("#score1").html(scorePlayer1); //display score for player 1
+$("#score2").html(scorePlayer2);//display score for player 2
 }
 // These functions for drag and drop allowDrop(ev),drag(ev),drop(ev)
 function allowDrop(ev) {
@@ -98,4 +121,9 @@ function drop(ev) {
   var data = ev.dataTransfer.getData("text");
   document.getElementById(data).classList.add("fixed")
   ev.target.appendChild(document.getElementById(data));
+}
+function reloadGame()
+{
+  location.reload();
+
 }

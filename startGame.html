@@ -13,8 +13,8 @@
 <header><h1>Tic Tac Toe </h1> </header>
     
 <div class="container">
-    <img id="first" src="img7.jpg" draggable="true" ondragstart="drag(event)">
-    <img id="second" src="img7.jpg" draggable="true" ondragstart="drag(event)">
+    <img id="first" src="img7.jpg">
+    <img id="second" src="img7.jpg">
         <img class="lion" id="drag1" src="lion.gif" draggable="true" ondragstart="drag(event)">
         <img class="monkey" id="monkey"src="monkey3.gif" draggable="true" ondragstart="drag(event)">
         <img class="sheep" id="sheep" src="sheep4.gif" draggable="true" ondragstart="drag(event)">
@@ -23,21 +23,21 @@
 </div>
 
 
-<table>
+<table id="XOTable">
       <tr class="row1">
-         <td id="1"> </td>
+         <td id="1"></td>
          <td id="2"></td>
          <td id="3"></td>
         
         </tr>
         <tr class="row2">
-                <td id="4"> </td>
+                <td id="4"></td>
                 <td id="5"></td>
                 <td id="6"></td>
               
                </tr>
         <tr class="row3">
-         <td id="7"> </td>
+         <td id="7"></td>
          <td id="8"></td>
          <td id="9"></td>
                    </tr>
@@ -46,8 +46,12 @@
     <div class="playerPic1" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" >Drag me here!</div>
     <div class="title2"><h4 class="animated infinite heartBeat">Player O</h4></div>
     <div class="playerPic2" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">Drag me here!</div>
-    <button class="animated infinite pulse" id="playbutton" onclick="resetGame()">New Game</button>
-
+    <div id="score">
+    <div id="score1"></div><p class="a">score</p>
+    <div id="score2"></div><p class="b">score</p>
+</div>
+    <button class="animated infinite pulse" id="playButton" onclick="resetGame()">Play again</button>
+    <button class="animated infinite pulse" id="reloadButton" onclick="reloadGame()">New Game</button>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="main.js"> </script>
 </body>
