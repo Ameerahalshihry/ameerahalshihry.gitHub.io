@@ -56,7 +56,6 @@ function checkWinner() {
         button: "Aww yiss!",
       });
       gameOver = true
-      // $("td").off("click", insert)// the user can not do click on the cell after win
       notequal = false;
       scorePlayer1++;
       score();
@@ -72,8 +71,6 @@ function checkWinner() {
         button: "Aww yiss!",
       });
       gameOver = true
-
-      // $("td").off("click", insert)// the user can not do click on the cell after win
       notequal = false;
       scorePlayer2++;
       score();
@@ -95,20 +92,25 @@ function checkWinner() {
 }
 //This function to reset the game
 function resetGame() {
- // location.reload();
-$('td').empty();
+$('td').empty(); //make all table empty
 player1 = [];
 player2 = [];
 $('td').css("background-color","white");
 flag = true;
 gameOver = false;
-// $("td").one("click", insert);
+}
+
+function reloadGame() // reload the game
+{
+  location.reload();
+
 }
 function score() //display score
 {
 $("#score1").html(scorePlayer1); //display score for player 1
 $("#score2").html(scorePlayer2);//display score for player 2
 }
+
 // These functions for drag and drop allowDrop(ev),drag(ev),drop(ev)
 function allowDrop(ev) {
   ev.preventDefault();
@@ -121,9 +123,4 @@ function drop(ev) {
   var data = ev.dataTransfer.getData("text");
   document.getElementById(data).classList.add("fixed")
   ev.target.appendChild(document.getElementById(data));
-}
-function reloadGame()
-{
-  location.reload();
-
 }
