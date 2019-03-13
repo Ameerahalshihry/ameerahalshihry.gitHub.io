@@ -30,6 +30,8 @@ I Deployed my game online, where the rest of the world can access it
 - Allow the human to choose whether to play as X or O
 - Make the computer (playing as O or X) and user plays against AI
 
+>  For Miss.Alanoud, You're a great Instructor. Thank you for helping us out; I really appreciate your kindness and support.
+
 ## Author
 Ameerah Alshihry
 
