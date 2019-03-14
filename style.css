@@ -30,6 +30,7 @@ align-content: center;
     justify-content: center;
     align-content: center;
     align-items: baseline;  
+    margin: 5px -20px;
 }
 
 .lion{
@@ -72,6 +73,7 @@ top:23%;
 .bottom-row {
     display: flex;
 justify-content: center;
+margin: 20px -20px;
 }
 
 
@@ -84,7 +86,8 @@ align-items: flex-start;
 }
 
 table{
-    display: flex;} 
+    display: flex;
+margin: 30px;} 
 
  tr ,td {
     width: 100px;
@@ -119,7 +122,7 @@ top:50%;
 
 #playButton{
 padding: 20px;
-margin: 30px;
+margin: 9px;
 border-radius: 12px;
 font-size: 30px;
 color:white;
@@ -143,7 +146,7 @@ transform: translateY(4px);
 
 #reloadButton{
     padding: 20px;
-    margin: 30px;
+    margin: 9px;
     border-radius: 12px;
     font-size: 30px;
     color:white;
@@ -151,7 +154,7 @@ transform: translateY(4px);
     text-align: center;
     background-color: orange;
     /* position: absolute; */
-    right:500px;
+    right:10px;
     bottom:20px;
     width: 14%;
 
@@ -182,6 +185,7 @@ border-radius: 25px;
 font-family: sans-serif;
 background-color: orange;
 line-height: 2px;
+margin: 2px 15px;
 }
 
 
@@ -200,6 +204,7 @@ font-family: sans-serif;
 background-color: orange;
 padding-top: 2px;
 line-height: 2px;
+margin: 2px 15px;
 }
 h4{       
 margin-top: 25px; 
@@ -216,6 +221,7 @@ padding-top:5px;
 text-align: center;
 color:gainsboro;
 font-style: italic;
+margin: 2px 15px;
 }
 .playerPic2{
 width: 160px;
@@ -228,6 +234,7 @@ border-radius: 25px;
 text-align: center;
 color:gainsboro;
 font-style: italic;
+margin: 2px 15px;
 }
 #score{
 
@@ -250,6 +257,7 @@ font-style: italic;
     font-style: italic;
     line-height: 120px; 
     font-size: 30px;
+    margin: 2px 15px;
 }
 
 #score2{
@@ -265,6 +273,7 @@ font-style: italic;
     font-size: 30px;
     font-style: italic;
     line-height: 120px; 
+    margin: 2px 15px;
   
 }
 .a{
