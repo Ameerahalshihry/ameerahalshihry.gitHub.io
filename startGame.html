@@ -13,45 +13,61 @@
 <header><h1 class="animated zoomInDown">Tic Tac Toe </h1> </header>
     
 <div class="container">
-    <img id="first" src="img7.jpg">
-    <img id="second" src="img7.jpg">
+        <img id="first" src="img7.jpg">
+        <img id="second" src="img7.jpg">
+    <div class="images">
+    
         <img class="lion" id="drag1" src="lion.gif" draggable="true" ondragstart="drag(event)">
         <img class="monkey" id="monkey"src="monkey3.gif" draggable="true" ondragstart="drag(event)">
         <img class="sheep" id="sheep" src="sheep4.gif" draggable="true" ondragstart="drag(event)">
         <img class="cat" id="cat" src="cat.gif" draggable="true" ondragstart="drag(event)">
 
-</div>
+    </div>
+<div class="bottom-row">
+        <div class="left">
 
+                <div class="title1"> <h4 class="animated infinite heartBeat">Player X</h4> </div>
+                <div class="playerPic1" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" >Drag me here!</div>
+                <div id="score1"></div>
+            </div>
+            <div class="mid">
 
-<table id="XOTable">
-      <tr class="row1">
-         <td id="1"></td>
-         <td id="2"></td>
-         <td id="3"></td>
-        
+    <table id="XOTable">
+        <tr class="row1">
+            <td id="1"></td>
+            <td id="2"></td>
+            <td id="3"></td>
+            
         </tr>
         <tr class="row2">
-                <td id="4"></td>
-                <td id="5"></td>
-                <td id="6"></td>
-              
-               </tr>
+            <td id="4"></td>
+            <td id="5"></td>
+            <td id="6"></td>
+            
+        </tr>
         <tr class="row3">
-         <td id="7"></td>
-         <td id="8"></td>
-         <td id="9"></td>
-                   </tr>
+            <td id="7"></td>
+            <td id="8"></td>
+            <td id="9"></td>
+        </tr>
     </table>
-    <div class="title1"> <h4 class="animated infinite heartBeat">Player X</h4> </div>
-    <div class="playerPic1" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" >Drag me here!</div>
-    <div class="title2"><h4 class="animated infinite heartBeat">Player O</h4></div>
-    <div class="playerPic2" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">Drag me here!</div>
-    <div id="score">
-    <div id="score1"></div><p class="a">score</p>
-    <div id="score2"></div><p class="b">score</p>
 </div>
+    
+    <div class="right">
+
+        <div class="title2"><h4 class="animated infinite heartBeat">Player O</h4></div>
+        <div class="playerPic2" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">Drag me here!</div>
+        <div id="score2"></div>
+    </div>
+</div>
+<div class="buttons">
+
     <button class="animated infinite pulse" id="playButton" onclick="resetGame()">Play again</button>
     <button class="animated infinite pulse" id="reloadButton" onclick="reloadGame()">New Game</button>
+</div>
+</div>
+</div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="main.js"> </script>
 </body>
